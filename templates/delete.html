@@ -1,0 +1,56 @@
+{% extends 'stockbase.html' %}
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+
+<html>
+<form method="POST" action="/"  >
+{% csrf_token %}
+	<div style="max-width: 400px;">
+</div>
+
+<img scr="">
+<div style="padding-bottom: 18px;font-size : 40px; text-align : bottom-center;color:yellow;background-color: "></div></b></u>
+<img src="https://images.unsplash.com/photo-1587370560942-ad2a04eabb6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80 " style=" width: 2000px; height: 1000px;;" class="img-fluid" alt="...">
+<style>
+.aa{
+		width:750px;
+		height: 800px;
+		color:black;
+		text-align: left;
+		font-family: sans-serif;
+		background-size: cover;
+		color: #C47451;
+		transform: translate(-5%,-5%);
+		background:rgba(0,0,0,0.1);
+		box-shadow: 0px 4px 16px rgba(0,0,0,0.5);
+		margin:0 auto;
+		margin-top:-900px;
+		margin-left:700px;
+		padding-top:50px;
+		padding-left:70px;
+		padding-right:70px;
+		border-radius:50px;
+		-webkit-border-radius:0px;
+	}
+</style>
+<body>
+
+<div class="aa" >
+<b><div style=" font-size : 25px; text-align: center; color:black;">Stock Details</br></br></div>
+<div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" ></br></br>
+<b><div style=" font-size : 22px; color:black;">
+Id<input type="hidden" name="id" id="id" value="{{ stock.id }}"/> </br>
+Medicine Name:</br><input type="text" id="medname" name="medname"  value="{{ stock.medname}}" style=" margin-left: 0px; border: solid; font-size:20px; width:350px; height:40px;"  /></br></br>
+Company Name:</br><input type="text" id="companyname" name="companyname" value="{{ stock.companyname}}" style=" margin-left: 0px; border: solid; font-size:20px; width:350px; height:40px;"  /></br></br>
+Batch No.:</br><input type="text" id="batchno" name="batchno" value="{{ stock.batchno}}" style=" margin-left: 0px;  border: solid; font-size:20px; width:350px; height:40px;" /></br></br>
+Manufacturing Date:</br><input type="text" id="mfd" name="mfd" value="{{ stock.mfd}}" style=" margin-left: 0px; border: solid; font-size:20px; width:350px; height:40px;"  /></br></br>
+Expire Date :</br><input type="text" id="exd" name="exd" value="{{ stock.exde}}" style=" margin-left: 0px; border: solid; font-size:20px; width:350px; height:40px;"  /></br></br>
+Price :</br><input type="text" id="price" name="price" value="{{ stock.price}}" style=" margin-left: 0px; border: solid; font-size:20px; width:350px; height:40px;"  /></br></br>
+
+<div><center> <a href="" style=" color: black;"> <button type="button" name="delete" class="btn btn-dark" style=" text-align: center; margin-left: 400px; margin-top: -950px; font-size:20px; width: 250px; background-color:#E5E4E2; height:40px;" >Delete Stock</a></center></button></br>
+<div><center> <a href="/stock" style=" color: black;"> <button type="button" name="login" class="btn btn-dark" style=" text-align: center; margin-left: 400px; margin-top: -800px; font-size:20px; width: 250px; background-color:#E5E4E2; height:40px;" >Cancel</a></center></button></br>
+</div></div></div>
+</body>
+</html>
+{% endblock body %}

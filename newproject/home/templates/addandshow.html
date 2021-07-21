@@ -1,0 +1,55 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="row">
+ <div class="col-sm-4">
+  <h4 class="text-center alert-info">Add Medicine</h4> 
+  <form action="" method="POST" enctype="multipart/form-data">
+   {% csrf_token %}
+ {{form.as_p}}
+ 
+ <input type="submit" class="btn btn-success" value="Add">
+ 
+ </div>
+
+ <div class="col-sm-7" offset-1>
+  <h4 class="text-center alert alert-info"> All Your Medicines</h4>
+  {% if stu %}
+   <table class="table table-hover">
+     <thead>
+       <tr>
+         <th scope="col">ID</th>
+         <th scope="col">Medical Name</th>
+         <th scope="col">Medicine Name</th>
+         <th scope="col">No. of strips</th>
+         <th scope="col">NO. of medicine</th>
+       </tr>
+     </thead>
+     <tbody>
+      {% for st in stu %}
+       <tr>
+         <th scope="row">{{st.id}}</th>
+         <td>{{st.Medical_Name}}</td>
+         <td>{{st.Medicine_Name}}</td>
+         <td>{{st.No_of_strips}}</td>
+         <td>{{st.NO_of_medicine}}</td>
+         <td>
+        <form action="{% url 'deletedata' st.id %}" 
+         method="post" class="d-inline"> {% csrf_token %}
+          <input type="submit" class="btn btn-danger" 
+          value="Delete">
+         </form>
+         </td>
+       </tr>
+      {% endfor %} 
+     </tbody>    
+   </table>
+      
+  {% else %} 
+   <h4 class="text-center alert alert-warning">No Records</h4>
+  {% endif %}
+
+  
+ </div>
+
+</div> 
+{% endblock body %}

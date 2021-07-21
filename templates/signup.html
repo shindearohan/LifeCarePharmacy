@@ -1,0 +1,209 @@
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Customer Signup</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <!--<link href="static/assets/img/favicon.png" rel="icon">-->
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Bethany - v4.2.0
+  * Template URL: https://bootstrapmade.com/bethany-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+ </head>
+ <body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container">
+      <div class="header-container d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <h1 class="text-light"><a href="index.html"><span>LifeCare Pharmacy</span></a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav id="navbar" class="navbar" >
+          <ul>
+            <li><a class="nav-link scrollto" href="/customerlogin" style=" font-size:25px;">Login</a></li>
+            <li><a class="nav-link scrollto" href="/" style=" font-size:25px;">Back</a></li>
+            <li><a class="getstarted scrollto" href="/" style=" font-size:20px;"> Home</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+      </div><!-- End Header Container -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<br><br><br>
+<br><br><br><br><br>
+<style>
+   nav{
+     align: center;
+      background-color: white;
+      margin-left:100px;
+    }
+    .one-edge-shadow {
+                  align: center;
+                  	box-shadow: 0 8px 2px -5px rgba(246,245,245);
+}
+.display-8{
+  
+  font-weight: 200;
+  font-size: 30px;
+}
+#bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+	
+  /* Preserve aspet ratio */
+  width: 2000px;
+  height: 1000px;
+}
+
+  </style>
+
+  </head>
+<body>
+<!--<body id="bg" style="background-image: url('{% static '1.jpg'%}');">-->
+<img src="https://images.unsplash.com/photo-1611690828749-66c846dbd1b4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTF8fG1lZGljaW5lfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" id="bg" alt="">
+
+<div class="container mt-4" style="margin-left:500px;">
+    
+    <div class="p-4 m-4">
+
+        
+        <div class="col-lg-5 rounded mx-auto border pt-4">
+            <div class="text-center col">
+            
+                
+            <!-- <hr> -->
+            <div class="display-8"><b>Create An Account</b></div>
+            <hr>
+            </div>
+            <h3 hidden class="alert alert-light border rounded">Create An Account</h3>
+            <form action="/signup" method="POST">
+                
+                {% csrf_token %}
+
+                {% if error%}
+                <div class="alert alert-danger" role="alert">
+                    {{error}}
+                </div>
+                {% endif %}
+                <!-- firstname -->
+                <div class="form-group" style="font-size:20px;">
+                    <label for=""><b>First Name</b></label>
+                    <input type="text" name="firstname"
+                     id="" value="{{values.first_name}}" class="form-control form-control-sm" 
+                     placeholder="" style=" font-size: 20px;">
+                </div>
+
+                <!-- last name -->
+                <div class="form-group" style="font-size:20px;">
+                    <label for=""><b>Last Name</b></label>
+                    <input type="text" name="lastname" 
+                    id="" value="{{values.last_name}}" class="form-control form-control-sm" style=" font-size: 20px;"
+                    >
+                </div>
+
+                <!-- phone -->
+                <div class="form-group" style="font-size:20px;">
+                    <label for=""><b>Phone</b></label>
+                    <input type="text" name="phone" 
+                    id="" class="form-control form-control-sm"
+                    value="{{values.phone}}"
+                    placeholder="565698959" style=" font-size: 20px;"
+                    >
+                </div>
+                <!-- email -->
+                <div class="form-group" style="font-size:20px;">
+                    <label for=""><b>Email</b></label>
+                    <input required type="email" name="email" id=""
+                    value="{{values.email}}" 
+                    class=" form-control-sm form-control" placeholder="example@gmail.com" style=" font-size: 20px;">
+                </div>
+
+                <!-- password -->
+                <div class="form-group" style="font-size:20px;">
+                    <label for=""><b>Password</b></label>
+                    <input type="password" 
+                    name="password" 
+                    id=""
+                     class="form-control form-control-sm" placeholder="********" style=" font-size: 20px;">
+                </div>
+                <div class="form-group" style="font-size:20px;">
+                  <label for=""><b>Address</b></label>
+                  <input type="text" name="address" id="" value="{{values.address}}" class="form-control form-control-sm" style=" font-size: 20px;">
+                </div>
+                <hr>
+                <div class="form-group">
+                    <input class="btn btn-sm btn-info" type="submit" value="Sign up" style=" border: 2px solid #fff; padding: 10px 20px;
+  transition: 0.5s; width:150px; height:50px; background:#009970; border-radius: 5px; font-size:20px; color:#fff;">
+                </div>
+
+                
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+{% if messages%}
+{%for updatedrecord in messages%}
+<h3 style="color: red;">{{updatedrecord}}</h3>
+{%endfor%}
+{% endif %}
+</body>
+</html>
+

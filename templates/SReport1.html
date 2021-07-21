@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Sales Records</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <!--<link href="static/assets/img/favicon.png" rel="icon">-->
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Bethany - v4.2.0
+  * Template URL: https://bootstrapmade.com/bethany-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+ </head>
+ <body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container">
+      <div class="header-container d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <h1 class="text-light"><a href="index.html"><span>LifeCare Pharmacy</span></a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav id="navbar" class="navbar" >
+          <ul>
+            
+            <li><a class="nav-link scrollto" href="/pharmacydashboard" style=" font-size:25px;">Back</a></li>
+            <li><a class="getstarted scrollto" href="/" style=" font-size:20px;"> Home</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+      </div><!-- End Header Container -->
+    </div>
+  </header><!-- End Header -->
+
+
+
+<br><br><br><br>
+<br><div style="padding-bottom: 18px; font-size : 40px; text-align : center;color:black; background-color: ">Previous Sales Record</div></br>
+
+<div style="margin-top:10px" class="form-group">
+                                    <!-- Button -->
+
+                                    <div class="col-sm-12 controls">
+<form method="get" action="/search4" class="d-flex">
+        <input name="q" id="q" class="form-control me-2" type="search4" placeholder="Search" aria-label="Search4"style=" margin-left:500px; width:500px; height:50px;">
+        <button class="btn btn-outline-primary" type="submit" style=" color:#fff;">Search</button>
+      </form></div>
+<style>
+button[type="submit"] {
+  font-family: "Poppins", sans-serif;
+  background: #009970;
+  border:2px solid #fff;
+  padding: 10px 35px;
+  transition: 0.5s;
+  border-radius: ;
+  color: #fff;
+  align: center;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+  button[type="submit"]:hover {
+  background: #009970;
+  border: 2px solid #009970;
+}
+</style>      
+   
+<div class="container-fluid">    
+
+   <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center"></h2>
+            
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Medical Name</th>
+                        <th>Medicine Name</th>
+                        <th>Amount of Medicine</th>
+                        
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for display in Photo %}
+                        <tr>
+                            <td>{{display.id}}</td>
+                            <td>{{display.Medical_Name}}</td>
+                            <td>{{display.Medicine_Name}}</td>
+                            <td>{{display.NO_of_medicine}}</td>
+                            
+                            </tr>
+                    {% endfor%}
+                </tbody>
+            </table>
+                    <a  href="/Spdf_report"><input type="submit"value ="Create PDF" style=" border: 2px solid #fff; padding: 10px 20px;
+  transition: 0.5s; width:150px; height:50px; background:#009970; border-radius: 10px; font-size:20px; color:#fff;"></a>
+
+        </div>
+    </div>
+</div>
+{% if status %}
+<script>
+    alert("{{status}}");
+</script>
+
+
+{% endif %}

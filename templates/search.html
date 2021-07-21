@@ -1,0 +1,40 @@
+<html>
+<form method="post" action="/"  >
+		
+	<div style="max-width: 400px;">
+</div>
+
+<style>
+th,td{
+    border: 2px black solid;
+    font-size: 24px;
+}
+</style>
+<table>
+<tr>
+    <th>ID</th>
+    <th>Medicine Name</th>
+    <th>Company Name</th>
+    <th>Batch No.</th>
+    <th>Manufacturing Date</th>
+    <th>Expiry Date</th>
+    <th>Price</th>
+    <th>button</th>
+</tr>
+{% for stock in stock %}
+<tr>
+<td>{{ stock.id }}</td>
+<td>{{ stock.medname }}</td>
+<td>{{ stock.companyname }}</td>
+<td>{{ stock.batchno }}</td>
+<td>{{ stock.mfd }}</td>
+<td>{{ stock.exd }}</td>
+<td>{{ stock.price }}</td>
+<td><a href="/delete/{{ stock.id }} "><input type="button" value="delete"> </a></td>
+<td><a href="/update/{{ stock.id }} "><input type="button" value="Edit"> </a></td>
+</tr>
+{% endfor %}
+</table>
+
+<body>
+</body></html>

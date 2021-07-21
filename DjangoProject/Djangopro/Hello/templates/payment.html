@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 bg-light text-center py-5 text-right text-align: center">
+            <h1>This is Payment Page</h1>
+        </div>
+        <!--<div class="col-md-6">
+            <iframe src="https://source.unsplash.com/1600x600/?Medicine" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>-->
+        <div class="col-md-6">
+            <form action="" method="post">
+            {% csrf_token %}
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" class="form-control" name="name" placeholder="Enter Your Name...">
+                </div>
+                <div class="form-group">
+                    <label>Email Id</label>
+                    <input type="text" class="form-control" name="email_id" placeholder="Enter Email Id...">
+                </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <textarea class="form-control" rows="5" name="address" placeholder="Address..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Order List</label>
+                    <input type="text" class="form-control" name="order_list" placeholder="Enter Order List...">
+                </div>
+                <div class="form-group">
+                    <label>Paid Payment</label>
+                    <input type="text" class="form-control" name="paid_payment" placeholder="Enter Paid Payment...">
+                </div>
+                <div class="form-group">
+                    <label>Remaining Payment</label>
+                    <input type="text" class="form-control" name="remaining_payment" placeholder="Enter Remaining Payment...">
+                </div>
+                <div class="form-group">
+                    <label>Total Payment</label>
+                    <input type="text" class="form-control" name="total_payment" placeholder="Enter Total Payment...">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="Send Message">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Previous Payments</h2>
+            <h4 class="text-center"><em>Total: {{messages|length}}</em></h4>
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th> Order List</th>
+                        <th>Paid Payment</th>
+                        <th>Remaining Payment</th>
+                        <th>Total Payment</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for msg in messages %}
+                        <tr>
+                            <td>{{msg.id}}</td>
+                            <td>{{msg.name}}</td>
+                            <td>{{msg.address}}</td>
+                            <td>{{msg.order_list}}</td>
+                            <td>{{msg.paid_payment}}</td>
+                            <td>{{msg.remaining_payment}}</td>
+                            <td>{{msg.total_payment}}</td>
+                            <td>{{msg.added_on}}</td>
+                        </tr>
+                    {% endfor%}
+                </tbody>
+            </table>
+        </div>
+    </div-->
+</div>
+{% if status %}
+<script>
+    alert("{{status}}");
+</script>
+{% endif %}
+{% endblock body %}
